@@ -24,12 +24,12 @@ export default function App() {
             <Stack.Screen
               name="Home"
               component={Game}
-              options={{title: 'Game'}}
+              options={{title: 'Morra Cinese'}}
             />
             <Stack.Screen
               name="Round"
               component={RoundGame}
-              options={{title: 'first round'}}
+              options={{title: 'Play Again'}}
             />
           </Stack.Navigator>
         </NavigationContainer>

@@ -15,7 +15,7 @@ export const resultsStyle = (color: string) =>
     results: {
       fontSize: 40,
       color: `${color}`,
-      fontWeight: '900',
+      fontWeight: '700',
       fontFamily: 'BarlowCondensed-BoldItalic',
       textTransform: 'uppercase',
     },

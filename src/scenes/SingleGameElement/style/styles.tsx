@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export const styles = (borderColor: string) =>
+export const styles = (borderColor: string, elevation: number) =>
   StyleSheet.create({
     buttonStyle: {
       shadowColor: '#fff',
@@ -8,10 +8,10 @@ export const styles = (borderColor: string) =>
         width: 0,
         height: 3,
       },
-      shadowOpacity: 0.29,
-      shadowRadius: 4.65,
+      shadowOpacity: 0.5,
+      shadowRadius: 10.5,
 
-      elevation: 7,
+      elevation: elevation,
       borderColor: borderColor,
       borderRadius: 100,
       borderWidth: 13,

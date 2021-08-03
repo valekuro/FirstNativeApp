@@ -49,6 +49,7 @@ export default function RoundGame() {
             }
             onPress={() => console.log(elementImageGamer)}
             color={`${theme.elementColor[elementGamerColor]}`}
+            elevation={60}
           />
           <Text style={resultsStyle(theme.colors.primary).choose}>
             {' '}
@@ -63,6 +64,7 @@ export default function RoundGame() {
                 source={theme.url[elementPCImage]}
               />
             }
+            elevation={0}
             onPress={() => console.log(elementImageGamer)}
             color={`${theme.elementColor[elementPCColor]}`}
           />

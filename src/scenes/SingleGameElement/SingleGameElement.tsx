@@ -8,6 +8,7 @@ interface SingleGameElementProps {
   icon: JSX.Element | HTMLImageElement;
   color: string;
   onPress: ((event: GestureResponderEvent) => void) | null | undefined;
+  elevation?: number;
 }
 /**
  * A single circle game element.
@@ -19,10 +20,13 @@ export default function SingleGameElement({
   icon,
   color,
   onPress,
+  elevation,
 }: SingleGameElementProps) {
+  let shadow: number;
+  elevation ? (shadow = elevation) : (shadow = 7);
   return (
     <View>
-      <Pressable style={styles(color).buttonStyle} onPress={onPress}>
+      <Pressable style={styles(color, shadow).buttonStyle} onPress={onPress}>
         {icon}
       </Pressable>
     </View>

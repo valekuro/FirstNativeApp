@@ -9,6 +9,7 @@ import React from 'react';
 import {hand, randomHand} from '../../slice/GameHand';
 import {useNavigation} from '@react-navigation/native';
 import theme from '../Theme';
+import elements from '../../gameElements';
 /**
  * Component situated in 'Home'. It is the game core. Here there are two triangles 
  * to represents lines between game items.
@@ -22,8 +23,7 @@ export default function GameCore() {
   //and allows to randomically choose the pc element to play.
   const handleSelectElement = (element: string) => {
     dispatch(hand(element));
-    const gameElements: string[] = ['paper', 'scissors', 'rock'];
-    dispatch(randomHand(gameElements[Math.floor(Math.random() * 3)]));
+    dispatch(randomHand(elements[Math.floor(Math.random() * 3)]));
     navigation.navigate('Round');
   };
   return (
