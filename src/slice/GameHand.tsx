@@ -1,3 +1,6 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import {createSlice} from '@reduxjs/toolkit';
 export const initialGamerHand: string = '';
 export const initialPCHand: string = '';

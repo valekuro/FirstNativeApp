@@ -1,12 +1,14 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import {StyleSheet} from 'react-native';
-import {useTheme} from './scenes/Theme';
-const theme = useTheme();
+import theme from './scenes/Theme';
 const globalStyle = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    backgroundColor: 'hsl(214, 47%, 23%) to hsl(237, 49%, 15%)',
+    backgroundColor: `${theme.backgroundColors.primary}`,
   },
   buttonStylePrimary: {
     borderRadius: 10,

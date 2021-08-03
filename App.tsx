@@ -1,7 +1,10 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {useTheme} from './src/scenes/Theme';
+import theme from './src/scenes/Theme';
 import GameElementsContext from './src/scenes/Score/GlobalScoreContext';
 import {Provider} from 'react-redux';
 import {store} from './src/store/store';
@@ -11,7 +14,6 @@ import RoundGame from './src/scenes/RoundGame';
 import {RootStackParamList} from './typeNav/type';
 const Stack = createStackNavigator<RootStackParamList>();
 export default function App() {
-  const theme = useTheme();
   const gameElem = ['sasso', 'carta', 'forbici'];
   return (
     <Provider store={store}>

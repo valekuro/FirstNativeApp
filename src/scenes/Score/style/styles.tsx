@@ -14,6 +14,7 @@ export const styles = (
       fontFamily: 'BarlowSemiCondensed_700Bold',
       lineHeight: lineHeight,
       color: `${color}`,
+      fontWeight: '700',
     },
   });
 

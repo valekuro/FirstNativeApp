@@ -1,3 +1,6 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import {createContext, useContext} from 'react';
 interface Props {
   availableGameElements: string[];

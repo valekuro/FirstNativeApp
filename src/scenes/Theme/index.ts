@@ -1,3 +1,3 @@
 import {useTheme} from './useTheme';
-
-export {useTheme};
+const theme = useTheme();
+export default theme;

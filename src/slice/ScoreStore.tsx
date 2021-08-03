@@ -1,3 +1,6 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import {createSlice} from '@reduxjs/toolkit';
 export const initialScore: number = 0;
 export const ScoreStore = createSlice({

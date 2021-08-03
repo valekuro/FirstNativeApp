@@ -1,29 +1,37 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import React from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-//import {Button} from 'react-native-elements';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {handsStyle, resultsStyle} from './style/resultsStyle';
 import {useAppSelector, useAppDispatch} from '../../store/hook';
 import {total} from '../../slice/ScoreStore';
 import globalStyle from '../../globalStyle';
 import SingleGameElement from '../SingleGameElement';
-import {useTheme} from '../Theme';
+import theme from '../Theme';
 import gameSchema from '../utils/gameSchema';
 import Score from '../Score';
 import {useNavigation} from '@react-navigation/native';
-
-export default function RoundGame(/* {navigation}: Props */) {
+/**
+ * It is Round page. The component manages the round game. It shows the gamer hand and
+ * the pc hand.
+ */
+export default function RoundGame() {
+  //hook calls
   const handChoosen: any = useAppSelector(state => state.GameHand.hand);
-  const theme = useTheme();
-  type StatusColorHandGamer = keyof typeof theme.elementColor;
-  type StatusImageHandGamer = keyof typeof theme.url;
-  let elementGamerColor: StatusColorHandGamer = handChoosen;
-  let elementImageGamer: StatusImageHandGamer = handChoosen;
   const pcHand: any = useAppSelector(state => state.GameHand.pcHand);
-  type StatusColorHandPC = keyof typeof theme.elementColor;
-  let elementPCColor: StatusColorHandPC = pcHand;
-  let elementPCImage: StatusImageHandGamer = pcHand;
   const dispatch = useAppDispatch();
   const navigation = useNavigation();
-  // const [loading, setLoading] = useState<string>('');
+  //types
+  type StatusColorHandGamer = keyof typeof theme.elementColor;
+  type StatusImageHandGamer = keyof typeof theme.url;
+  type StatusColorHandPC = keyof typeof theme.elementColor;
+  //variables
+  let elementGamerColor: StatusColorHandGamer = handChoosen;
+  let elementImageGamer: StatusImageHandGamer = handChoosen;
+  let elementPCColor: StatusColorHandPC = pcHand;
+  let elementPCImage: StatusImageHandGamer = pcHand;
+  //functions
   const score = gameSchema(handChoosen, pcHand);
   dispatch(total(score));
 
@@ -76,32 +84,3 @@ export default function RoundGame(/* {navigation}: Props */) {
     </View>
   );
 }
-
-export const handsStyle = StyleSheet.create({
-  handsStyle: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'space-evenly',
-    width: '100%',
-  },
-});
-
-export const resultsStyle = (color: string) =>
-  StyleSheet.create({
-    results: {
-      fontSize: 40,
-      color: `${color}`,
-      fontWeight: '900',
-      fontFamily: 'BarlowCondensed-BoldItalic',
-      textTransform: 'uppercase',
-    },
-    choose: {
-      fontSize: 15,
-      color: `${color}`,
-      textTransform: 'uppercase',
-      marginTop: 23,
-    },
-  });

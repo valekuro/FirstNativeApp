@@ -1,13 +1,17 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import AvailableElements from './ScoreElements/AvailableElements';
 import ScoreTable from './ScoreElements/ScoreTable';
-
+/**
+ * Entire Score box section.
+ */
 export default function Score() {
   return (
     <View style={styles.container}>
       <AvailableElements />
-
       <ScoreTable />
     </View>
   );

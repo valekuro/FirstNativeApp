@@ -1,8 +1,9 @@
-/*
-export type ThemeColors = keyof typeof theme.colors;
-export type ThemeFont = keyof typeof theme.font;
-export type ThemeBackground = keyof typeof theme.backgroundColors; */
-
+/**
+ * @author: Valentina D'Orazio
+ */
+/**
+ * the most common app settings (text color, background color, elements color, url...)
+ */
 export function useTheme() {
   const theme = {
     colors: {

@@ -1,18 +1,26 @@
+/**
+ * @author: Valentina D'Orazio
+ */
+/**
+ * the function take in input the gamer choose and calculate who is the enemy
+ * @param gamer - gamer move
+ * @return enemy(string)
+ */
 export default function enemiesCalculation(gamer: string) {
-  let a = '';
+  let enemy = '';
   switch (gamer) {
     case 'rock':
-      a = 'paper';
+      enemy = 'paper';
       break;
     case 'paper':
-      a = 'scissors';
+      enemy = 'scissors';
       break;
     case 'scissors':
-      a = 'rock';
+      enemy = 'rock';
       break;
     default:
-      a = '';
+      enemy = '';
       break;
   }
-  return a;
+  return enemy;
 }

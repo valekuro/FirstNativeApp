@@ -1,9 +1,13 @@
+/**
+ * @author: Valentina D'Orazio
+ */
 import React from 'react';
 import {Text, View} from 'react-native';
 import {styles, containerStyles} from '../style/styles';
 import {useGlobalContext} from '../GlobalScoreContext';
 
 export default function AvailableElements() {
+  //hook calls
   const {availableGameElements, theme} = useGlobalContext();
 
   return (
